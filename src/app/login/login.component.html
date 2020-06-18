@@ -1,0 +1,35 @@
+<div class="login">
+  <form [formGroup]='loginUser'>
+    <div class="logo">
+      YOUR LOGO
+    </div>
+    <div class='example-container'>
+      <mat-form-field>
+        <input matInput placeholder="Email" required formControlName='email' #email type="email">
+        <mat-error *ngIf="loginUser.get('email').invalid && loginUser.get('email').touched">
+          This field is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Password" required formControlName='password' #password
+               type="password">
+        <mat-error *ngIf="loginUser.get('password').invalid && loginUser.get('password').touched">This field
+          is required</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" (click)="login(loginUser)"
+              [disabled]="loginUser.pristine || loginUser.invalid">
+      <span *ngIf="!loading">
+        Log in
+      </span>
+        <span *ngIf="loading">
+        Loading...
+      </span>
+      </button>
+
+      <small class="errorMes" *ngIf="errorMes">{{errorMes}}</small>
+
+    </div>
+  </form>
+
+</div>
