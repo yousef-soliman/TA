@@ -2,9 +2,14 @@
 * {
   box-sizing: border-box;
 }
-body { margin: 0; font-family: 'Montserrat', sans-serif;}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #ecf3f7;
+}
 
 .btn-upload {
-  background: rgb(000,094,131) !important;
+  background: rgb(000, 094, 131) !important;
   color: #fff !important;
 }

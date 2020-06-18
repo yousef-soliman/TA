@@ -5,6 +5,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class DocsService {
   SERVER_URL: string = "http://68.183.42.41:8013/api/v1";
+
   constructor(private httpClient: HttpClient) { }
 
   public upload(formData) {
