@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "theAccounter"
+  "defaultProject": "theAccounter",
+  "cli": {
+    "analytics": "ce189b1b-b71e-4fb0-ac48-2090dc48c2f4"
+  }
 }

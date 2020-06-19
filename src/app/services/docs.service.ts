@@ -1,23 +1,29 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DocsService {
-  SERVER_URL: string = "http://68.183.42.41:8013/api/v1";
+  SERVER_URL: string = 'http://68.183.42.41:8013/api/v1';
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  public upload(formData) {
-
+  public upload(sessionID, formData) {
+    let params = new HttpParams().set('session_id', sessionID);
     return this.httpClient.post<any>(`${this.SERVER_URL}/uploadDoc`, formData, {
       reportProgress: true,
-      observe: 'events'
+      observe: 'events',
+      params: params,
     });
   }
 
   public getDocs(sessionID, body) {
-    return this.httpClient.post(`${this.SERVER_URL}/documents`, sessionID, body)
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let params = new HttpParams().set('session_id', sessionID);
+    return this.httpClient.post(`${this.SERVER_URL}/documents`, body, {
+      headers: headers,
+      params: params,
+    });
   }
-
 }
