@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 })
 export class UserService {
   userData;
-  private _options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
   constructor(private http: HttpClient, private router: Router) { }
 

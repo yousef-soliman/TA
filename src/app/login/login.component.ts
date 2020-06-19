@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
           this.userSer.userData = res.result;
           localStorage.setItem("session-id", this.userSer.userData.session_id);
           localStorage.setItem("company-id", this.userSer.userData.company_id);
-          // console.log(res);
           this.router.navigate(['']);
 
       }, error => {
