@@ -17,7 +17,7 @@
         <mat-error *ngIf="loginUser.get('password').invalid && loginUser.get('password').touched">This field
           is required</mat-error>
       </mat-form-field>
-      <button class="submit" mat-raised-button type="submit" (click)="login(loginUser)"
+      <button mat-raised-button color="primary" type="submit" (click)="login(loginUser)"
               [disabled]="loginUser.pristine || loginUser.invalid">
       <span *ngIf="!loading">
         Log in
